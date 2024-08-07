@@ -47,7 +47,7 @@ public class ContactController extends ExceptionHandling {
         return ResponseEntity.ok(new SuccessResponseDto<>(HttpStatus.OK, null));
     }
 
-    @GetMapping("/{email}")
+    @GetMapping("/{email}") //select
     public ResponseEntity<SuccessResponseDto> select(@PathVariable String email,
                                                                           HttpServletRequest request) {
         AppIdHelper.verifyAppId(request.getHeader("APPID"));
