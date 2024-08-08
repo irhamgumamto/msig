@@ -11,9 +11,6 @@ public class ExceptionConstant {
             "Silakan menggunakan fitur lupa password untuk masuk ke dalam aplikasi.";
     public static final String ERROR_PROCESSING_FILE = "Terjadi error ketika melakukan pemrosesan file di server.";
     public static final String NOT_ENOUGH_PERMISSION = "Anda tidak diizinkan untuk mengakses";
-    public static final String THIRD_PARTY_ERROR = "Terjadi error saat melakukan pemrosesan dengan aplikasi pihak ketiga";
-
-    public static final String ERROR_PATH = "/error";
     public static final String APPID_ERROR_MSG = "You are not allowed to access The API";
 
     private ExceptionConstant() {

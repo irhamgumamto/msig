@@ -79,14 +79,6 @@ public class ExceptionHandling implements ErrorController {
     }
 
 
-    @ExceptionHandler({HttpServerErrorException.class, HttpClientErrorException.class})
-    public ResponseEntity<ErrorResponseDto> handleHttpServerErrorException(HttpClientErrorException clEx,
-                                                                           HttpServerErrorException serEx) {
-        log.info("Third Party Exception (HttpClientErrorException):\n {}", clEx.getMessage());
-        log.info("Third Party Exception (HttpServerErrorException):\n {}", serEx.getMessage());
-        return createHttpResponse(HttpStatus.SERVICE_UNAVAILABLE, THIRD_PARTY_ERROR);
-    }
-
     @ExceptionHandler(BadRequestException.class)
     public ResponseEntity<ErrorResponseDto> handleBadRequestException(BadRequestException exception) {
         log.info("EX: {}", exception.getStackTrace().toString());
@@ -111,10 +103,6 @@ public class ExceptionHandling implements ErrorController {
         return createHttpResponse(HttpStatus.FORBIDDEN, exception.getMessage());
     }
 
-//    @ExceptionHandler(NoHandlerFoundException.class)
-//    public ResponseEntity<HttpResponseDto> noHandlerFoundException(NoHandlerFoundException e) {
-//        return createHttpResponse(HttpStatus.BAD_REQUEST, "There is no mapping for this URL");
-//    }
 
     @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
     public ResponseEntity<ErrorResponseDto> methodNotSupportedException(HttpRequestMethodNotSupportedException exception) {
@@ -128,12 +116,6 @@ public class ExceptionHandling implements ErrorController {
         exception.printStackTrace();
         return createHttpResponse(HttpStatus.INTERNAL_SERVER_ERROR, INTERNAL_SERVER_ERROR_MSG);
     }
-
-//    @ExceptionHandler(NotAnImageFileException.class)
-//    public ResponseEntity<HttpResponseDto> notAnImageFileException(NotAnImageFileException exception) {
-//        log.error(exception.getMessage());
-//        return createHttpResponse(BAD_REQUEST, exception.getMessage());
-//    }
 
     @ExceptionHandler(NoResultException.class)
     public ResponseEntity<ErrorResponseDto> notFoundException(NoResultException exception) {

@@ -48,7 +48,7 @@ public class DbConfig {
             @Qualifier("firstDataSource") DataSource dataSource
     ) {
         Map<String, Object> properties = new HashMap<>();
-        properties.put("hibernate.hbm2ddl.auto", "create");
+        properties.put("hibernate.hbm2ddl.auto", "none");
         properties.put("hibernate.default_schema", "public");
         properties.put("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
         properties.put("hibernate.show_sql", "true");

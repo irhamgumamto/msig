@@ -8,7 +8,7 @@
 	},
 	"item": [
 		{
-			"name": "get By Email",
+			"name": "get By Id",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -19,7 +19,7 @@
 					}
 				],
 				"url": {
-					"raw": "localhost:8095/api/v1/contact/irham@gmail.com",
+					"raw": "localhost:8095/api/v1/contact/1",
 					"host": [
 						"localhost"
 					],
@@ -28,7 +28,7 @@
 						"api",
 						"v1",
 						"contact",
-						"irham@gmail.com"
+						"1"
 					]
 				}
 			},
@@ -62,7 +62,7 @@
 			"response": []
 		},
 		{
-			"name": "contact add",
+			"name": "add",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -74,7 +74,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"irham\",\r\n    \"secondname\": \"test\",\r\n    \"work\": \"PT. coba coba\",\r\n    \"email\": \"irham@gmail.com\",\r\n    \"phone\": \"082122654546\",\r\n    \"description\": \"\"\r\n\r\n}",
+					"raw": "{\r\n    \"name\": \"irham\",\r\n    \"secondname\": \"test\",\r\n    \"work\": \"PT. coba coba\",\r\n    \"email\": \"irhaqm1@gmail.com\",\r\n    \"phone\": \"082112654546\",\r\n    \"description\": \"\"\r\n\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -98,7 +98,7 @@
 			"response": []
 		},
 		{
-			"name": "contact update",
+			"name": "search",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -110,7 +110,43 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"irham\",\r\n    \"secondname\": \"test\",\r\n    \"work\": \"PT. coba coba\",\r\n    \"email\": \"irham@gmail.com\",\r\n    \"phone\": \"082122654546\",\r\n    \"description\": \"\"\r\n\r\n}",
+					"raw": "{\r\n    \"startDate\": \"02-08-2024\",\r\n    \"endDate\": \"22-08-2024\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8095/api/v1/contact/search",
+					"host": [
+						"localhost"
+					],
+					"port": "8095",
+					"path": [
+						"api",
+						"v1",
+						"contact",
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "APPID",
+						"value": "rjQUAgP5gFb1gj6S05zkMHccB6tH7iDR",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"irham\",\r\n    \"secondname\": \"test\",\r\n    \"work\": \"PT. coba coba\",\r\n    \"email\": \"irham@gmail.com\",\r\n    \"phone\": \"082122654546\",\r\n    \"description\": \"\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
